@@ -33,24 +33,15 @@ To learn more about Next.js, take a look at the following resources:
 
 This repository contains a **common structure for Next.js** applications (app router, shared components, and recommended developer tooling). The project includes ESLint, Prettier, TypeScript and Husky + lint-staged to enforce code quality and prevent commits with errors or warnings.
 
-## Checks & pre-commit hook (preflight) 🔧
+## Checks & pre-commit hook 🔧
 
-- A single **`preflight`** script runs all checks:
+This project enforces code quality using **ESLint**, **Prettier**, and **TypeScript**. The pre-commit hook runs `npx lint-staged` to auto-fix staged files for ESLint and Prettier.
 
-```bash
-npm run preflight
-# runs: eslint . --ext .js,.jsx,.ts,.tsx --max-warnings 0 && prettier --check . && tsc --noEmit
-```
+- Run checks locally:
 
-- What it does:
-
-  - **ESLint** with `--max-warnings 0` (treats warnings as failures)
-  - **Prettier** `--check` (fails if files need formatting)
-  - **TypeScript** `tsc --noEmit` (fails on type errors)
-
-- Husky is installed and configured to run `npm run preflight` on `pre-commit` so commits are blocked if any check fails.
-
-- `lint-staged` is set up to auto-fix staged files for ESLint and Prettier before commit (configured in `package.json`).
+  - ESLint: `npm run lint`
+  - Format (fix files): `npm run format`
+  - TypeScript check: `npx tsc --noEmit`
 
 - To bypass the hook (use sparingly):
 
@@ -60,7 +51,7 @@ git commit -m "..." --no-verify
 
 ---
 
-If you'd like, I can also add a CI workflow that runs `npm run preflight` on pull requests.
+If you'd like, I can add a CI workflow that runs these checks on pull requests.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 

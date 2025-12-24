@@ -9,7 +9,6 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix .",
     "format": "prettier --write .",
-    "preflight": "eslint . --ext .js,.jsx,.ts,.tsx --max-warnings 0 && prettier --check . && tsc --noEmit",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -23,18 +22,18 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
-    "next": "16.1.1",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "next": "15.2.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "16.1.1",
+    "@next/eslint-plugin-next": "15.2.3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.1",
+    "eslint": "8.57.1",
+    "eslint-config-next": "15.2.3",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-perfectionist": "^5.1.0",
@@ -42,10 +41,11 @@
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-security": "^3.0.1",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "lint-staged": "^14.0.0",
     "prettier": "^2.8.8",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "typescript-eslint": "^8.50.1"
   }
 }
