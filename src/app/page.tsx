@@ -1,66 +1,39 @@
-import Image from "next/image";
 import { JSX } from "react";
 
+import { Container, FallBackImage, Paragraph, Title } from "../components/common";
+
 const Home = (): JSX.Element => (
-  <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-    <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-      <Image
-        alt="Next.js logo"
-        className="dark:invert"
-        height={20}
-        priority
-        src="/next.svg"
-        width={100}
-      />
-      <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-        <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-          To get started, edit the page.tsx file.
-        </h1>
-        <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-          Looking for a starting point or more instructions? Head over to{" "}
-          <a
-            className="font-medium text-zinc-950 dark:text-zinc-50"
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          >
-            Templates
-          </a>{" "}
-          or the{" "}
-          <a
-            className="font-medium text-zinc-950 dark:text-zinc-50"
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          >
-            Learning
-          </a>{" "}
-          center.
-        </p>
+  <Container backgroundClassName="bg-black" className="p-10 text-white">
+    <Container className="px-10">
+      <div className="flex flex-wrap gap-5 items-center justify-between">
+        <Title className="" level={1} title="h1" />
+        <Title className="" level={2} title="h2" />
+        <Title className="" level={3} title="h3" />
+        <Title className="" level={4} title="h4" />
+        <Title className="" level={5} title="h5" />
+        <Title className="" level={6} title="h6" />
       </div>
-      <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-        <a
-          className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <Image
-            alt="Vercel logomark"
-            className="dark:invert"
-            height={16}
-            src="/vercel.svg"
-            width={16}
-          />
-          Deploy Now
-        </a>
-        <a
-          className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Documentation
-        </a>
-      </div>
-    </main>
-  </div>
+    </Container>
+    <Container className="bg-white flex justify-center p-10 gap-10">
+      <FallBackImage alt="Fallback Image" height={500} src="/next.svg" width={500} />
+      <FallBackImage alt="Fallback Image" height={500} src="/xyz.png" width={500} />
+    </Container>
+    <Container className="flex justify-center p-10 gap-10">
+      <Paragraph description="Large Font Size Paragraph" variant="large" />
+      <Paragraph description="Medium Font Size Paragraph" variant="medium" />
+      <Paragraph description="Small Font Size Paragraph" variant="small" />
+      <Paragraph>
+        <span className="text-blue-800">Paragraph With Children</span>{" "}
+        <span className="text-emerald-400">Paragraph With Children</span>
+      </Paragraph>
+    </Container>
+    <Container className="flex flex-wrap gap-5 items-center px-10">
+      <Container as="section">Container By Default Section Tag</Container>
+      <Container as="div">Container As Div Tag</Container>
+      <Container as="footer">Container As Footer Tag</Container>
+      <Container as="header">Container As Header Tag</Container>
+    </Container>
+  </Container>
 );
 
 export default Home;

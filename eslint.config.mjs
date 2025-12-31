@@ -3,12 +3,12 @@ import nextPlugin from "@next/eslint-plugin-next";
 import importPlugin from "eslint-plugin-import";
 import a11yPlugin from "eslint-plugin-jsx-a11y";
 import perfectionistPlugin from "eslint-plugin-perfectionist";
-import prettierPlugin from "eslint-plugin-prettier";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import securityPlugin from "eslint-plugin-security";
 import globals from "globals";
 import tseslint from "typescript-eslint";
+import prettierConfig from "eslint-config-prettier";
 
 export default tseslint.config(
   {
@@ -31,6 +31,7 @@ export default tseslint.config(
       js.configs.recommended,
       ...tseslint.configs.recommended,
       ...tseslint.configs.recommendedTypeChecked,
+      prettierConfig,
     ],
 
     plugins: {
@@ -40,7 +41,6 @@ export default tseslint.config(
       "jsx-a11y": a11yPlugin,
       security: securityPlugin,
       perfectionist: perfectionistPlugin,
-      prettier: prettierPlugin,
       "@next/next": nextPlugin,
     },
 
@@ -65,9 +65,6 @@ export default tseslint.config(
     },
 
     rules: {
-      /* ---------------- Prettier ---------------- */
-      "prettier/prettier": "error",
-
       /* ---------------- General ---------------- */
       "no-console": ["warn", { allow: ["warn", "error"] }],
       "prefer-const": "error",
