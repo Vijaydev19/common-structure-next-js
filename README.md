@@ -38,7 +38,6 @@ This repository contains a **common structure for Next.js** applications (app ro
 This project enforces code quality using **ESLint**, **Prettier**, and **TypeScript**. The pre-commit hook runs `npx lint-staged` to auto-fix staged files for ESLint and Prettier.
 
 - Run checks locally:
-
   - ESLint: `npm run lint`
   - Format (fix files): `npm run format`
   - TypeScript check: `npx tsc --noEmit`
