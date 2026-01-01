@@ -11,7 +11,7 @@ const variantStyles: Record<TitleLevel, string> = {
   [titleLevel.six]: "text-sm md:text-base lg:text-lg xl:text-base",
 };
 
-const Title = ({ level, title, className = "" }: TitleProps): JSX.Element => {
+const Title = ({ level = titleLevel.two, title, className = "" }: TitleProps): JSX.Element => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
   return (
