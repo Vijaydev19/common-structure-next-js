@@ -1,3 +1,6 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from "eslint-plugin-storybook";
+
 import js from "@eslint/js";
 import nextPlugin from "@next/eslint-plugin-next";
 import importPlugin from "eslint-plugin-import";
@@ -24,7 +27,6 @@ export default tseslint.config(
       "next-env.d.ts",
     ],
   },
-
   {
     files: ["**/*.{ts,tsx,js,jsx}"],
     extends: [
@@ -51,7 +53,7 @@ export default tseslint.config(
         ...globals.node,
       },
       parserOptions: {
-        project: ["./tsconfig.json"],
+        project: ["./tsconfig.json","./tsconfig.storybook.json"],
         ecmaFeatures: { jsx: true },
         tsconfigRootDir: import.meta.dirname,
       },
@@ -222,7 +224,6 @@ export default tseslint.config(
       "perfectionist/sort-jsx-props": ["error", { type: "alphabetical", order: "asc" }],
     },
   },
-
   {
     files: ["pages/api/**/*.{ts,js}", "app/api/**/*.{ts,js}"],
     rules: {
@@ -230,12 +231,12 @@ export default tseslint.config(
       "no-console": "off",
     },
   },
-
   {
     files: ["next.config.{js,ts}", "middleware.{js,ts}"],
     rules: {
       "@typescript-eslint/explicit-function-return-type": "off",
       "import/no-default-export": "off",
     },
-  }
+  },
+  storybook.configs["flat/recommended"]
 );
