@@ -53,7 +53,7 @@ export default tseslint.config(
         ...globals.node,
       },
       parserOptions: {
-        project: ["./tsconfig.json","./tsconfig.storybook.json"],
+        project: ["./tsconfig.json", "./tsconfig.storybook.json"],
         ecmaFeatures: { jsx: true },
         tsconfigRootDir: import.meta.dirname,
       },
