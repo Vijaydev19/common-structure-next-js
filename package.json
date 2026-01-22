@@ -1,7 +1,8 @@
 {
-  "name": "common_structure",
+  "name": "nextjs-starter-template",
   "version": "0.1.0",
   "private": true,
+  "description": "Next.js starter template with TypeScript, ESLint, Prettier, Husky, Tailwind, Storybook, and scalable structure",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
@@ -9,7 +10,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "prepare": "husky",
+    "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -24,16 +25,16 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
-    "next": "^16.1.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "next": "^15.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "15.2.3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "eslint": "^8.57.1",
     "eslint-config-next": "15.2.3",
     "eslint-config-prettier": "^10.1.8",
@@ -44,6 +45,7 @@
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-security": "^3.0.1",
+    "eslint-plugin-storybook": "^10.1.11",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "^3.7.4",
@@ -58,7 +60,6 @@
     "@storybook/addon-docs": "^10.1.11",
     "@storybook/addon-onboarding": "^10.1.11",
     "vite": "^7.3.0",
-    "eslint-plugin-storybook": "^10.1.11",
     "vitest": "^4.0.16",
     "playwright": "^1.57.0",
     "@vitest/browser-playwright": "^4.0.16",
