@@ -1,8 +1,8 @@
-import { JSX } from "react";
+import { FC } from "react";
 
-import { Container, FallBackImage, Paragraph, Title } from "../components/common";
+import { Container, FallBackImage, Paragraph, Title } from "@/src/components/common";
 
-const Home = (): JSX.Element => (
+const Home: FC = () => (
   <Container backgroundClassName="bg-black" className="p-10 text-white">
     <Container className="px-10">
       <div className="flex flex-wrap gap-5 items-center justify-between">
@@ -15,8 +15,20 @@ const Home = (): JSX.Element => (
       </div>
     </Container>
     <Container className="bg-white flex justify-center p-10 gap-10">
-      <FallBackImage alt="Fallback Image" height={500} src="/next.svg" width={500} />
-      <FallBackImage alt="Fallback Image" height={500} src="/xyz.png" width={500} />
+      <FallBackImage
+        alt="Fallback Image"
+        fetchPriority="high"
+        height={500}
+        src="/next.svg"
+        width={500}
+      />
+      <FallBackImage
+        alt="Fallback Image"
+        fetchPriority="high"
+        height={500}
+        src="/xyz.png"
+        width={500}
+      />
     </Container>
     <Container className="flex justify-center p-10 gap-10">
       <Paragraph description="Large Font Size Paragraph" variant="large" />
